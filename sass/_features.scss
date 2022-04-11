@@ -4,6 +4,28 @@
     margin: 15rem 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //dla responive'u dzięki temu ilość kolumn będzie się dopasowywać do szerokości ekranu
     grid-gap: 6rem;
+    align-items: start;
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary; //zmieni kolor ikony svg
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2 ; //aby zadziałało -1 musi być zdefiniowana cała siatka - jeżeli nie będą zdefiniowane np wiersze to nie zadziała
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
 }
